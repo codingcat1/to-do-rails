@@ -1,4 +1,16 @@
-<h1><%= @task.description %></h1>
+<h1>Tasks Progress</h2>
 
+<h2>Done:</h2>
+<% @tasks.each do |task| %>
+  <% if task.done == true %>
+    <li><%= task.description %></li>
+  <% end %>
+<% end %>
 
-<p>Done?: <%= @task.done %></p>
+<h2>Not Done:</h2>
+<% @tasks.each do |task| %>
+  <% if task.done == nil %>
+    <li><%= task.description %></li>
+  <% end %>
+<% end %>
+

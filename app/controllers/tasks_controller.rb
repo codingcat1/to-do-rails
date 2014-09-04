@@ -4,11 +4,6 @@ class TasksController < ApplicationController
     render('tasks/index.html.erb')
   end
 
-  def show
-    @task = Task.find(params[:id])
-    render = ('tasks/show.html.erb')
-  end
-
   def new
     @task = Task.new(params[:task])
     render ('tasks/new.html.erb')
@@ -26,5 +21,12 @@ class TasksController < ApplicationController
       @tasks = Task.all
       render('tasks/index.html.erb')
     end
+  end
+
+  def show
+    # @task = Task.find(params[:id])
+    @tasks = Task.all
+    # @task.update(:done => true)
+    render ('tasks/show.html.erb')
   end
 end
